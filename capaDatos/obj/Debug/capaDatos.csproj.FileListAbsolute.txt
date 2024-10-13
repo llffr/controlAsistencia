@@ -1,0 +1,7 @@
+C:\Users\fernd\Documents\univ\2024-02\Análisis_Diseño_Algoritmos\proyectos\sistemaControlAsistencia\capaDatos\bin\Debug\capaDatos.dll
+C:\Users\fernd\Documents\univ\2024-02\Análisis_Diseño_Algoritmos\proyectos\sistemaControlAsistencia\capaDatos\bin\Debug\capaDatos.pdb
+C:\Users\fernd\Documents\univ\2024-02\Análisis_Diseño_Algoritmos\proyectos\sistemaControlAsistencia\capaDatos\obj\Debug\capaDatos.csproj.AssemblyReference.cache
+C:\Users\fernd\Documents\univ\2024-02\Análisis_Diseño_Algoritmos\proyectos\sistemaControlAsistencia\capaDatos\obj\Debug\capaDatos.csproj.CoreCompileInputs.cache
+C:\Users\fernd\Documents\univ\2024-02\Análisis_Diseño_Algoritmos\proyectos\sistemaControlAsistencia\capaDatos\obj\Debug\capaDatos.dll
+C:\Users\fernd\Documents\univ\2024-02\Análisis_Diseño_Algoritmos\proyectos\sistemaControlAsistencia\capaDatos\obj\Debug\capaDatos.pdb
+C:\Users\fernd\Documents\univ\2024-02\Análisis_Diseño_Algoritmos\proyectos\sistemaControlAsistencia\capaDatos\bin\Debug\capaDatos.dll.config
