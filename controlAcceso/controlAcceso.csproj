@@ -56,6 +56,18 @@
     <Compile Include="frmCargo.Designer.cs">
       <DependentUpon>frmCargo.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmConsultaFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaFecha.Designer.cs">
+      <DependentUpon>frmConsultaFecha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultaIndividual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaIndividual.Designer.cs">
+      <DependentUpon>frmConsultaIndividual.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmControl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +90,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmCargo.resx">
       <DependentUpon>frmCargo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultaFecha.resx">
+      <DependentUpon>frmConsultaFecha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultaIndividual.resx">
+      <DependentUpon>frmConsultaIndividual.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmControl.resx">
       <DependentUpon>frmControl.cs</DependentUpon>

@@ -37,22 +37,15 @@ namespace controlAcceso
 
         private void txtdni_TextChanged(object sender, EventArgs e)
         {
-            /*
             if (txtdni.Text.Length <= 8 || txtdni.Text.Length >= 8)
             {
                 DataTable dt = new DataTable();
                 dt = dao.filtrarDatosPersona(txtdni.Text);
                 if (dt.Rows.Count > 0)
                 {
-                    txtnom.Text = dt.Rows[0][1].ToString();
-//                    txtape.Text = dt.Rows[0][2].ToString();
+                    txtnom.Text = dt.Rows[0][0].ToString();
                 }
             }
-            */
-            DataTable dt = new DataTable();
-            dt = dao.filtrarDatosPersona(txtdni.Text);
-            dataGridView1.DataSource = dt;
         }
-
     }
 }

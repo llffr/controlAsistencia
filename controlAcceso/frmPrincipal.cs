@@ -37,5 +37,19 @@ namespace controlAcceso
             co.MdiParent = this;
             co.Show();
         }
+
+        private void buttonItem17_Click(object sender, EventArgs e)
+        {
+            frmConsultaIndividual ca= new frmConsultaIndividual();
+            ca.MdiParent = this;
+            ca.Show();
+        }
+
+        private void buttonItem18_Click(object sender, EventArgs e)
+        {
+            frmConsultaFecha ca= new frmConsultaFecha();
+            ca.MdiParent = this;
+            ca.Show();
+        }
     }
 }

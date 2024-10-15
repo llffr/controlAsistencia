@@ -1,7 +1,6 @@
 C:\Users\fernd\Documents\univ\2024-02\Análisis_Diseño_Algoritmos\proyectos\sistemaControlAsistencia\controlAcceso\bin\Debug\controlAcceso.exe.config
 C:\Users\fernd\Documents\univ\2024-02\Análisis_Diseño_Algoritmos\proyectos\sistemaControlAsistencia\controlAcceso\bin\Debug\controlAcceso.exe
 C:\Users\fernd\Documents\univ\2024-02\Análisis_Diseño_Algoritmos\proyectos\sistemaControlAsistencia\controlAcceso\bin\Debug\controlAcceso.pdb
-C:\Users\fernd\Documents\univ\2024-02\Análisis_Diseño_Algoritmos\proyectos\sistemaControlAsistencia\controlAcceso\bin\Debug\DevComponents.DotNetBar2.DLL
 C:\Users\fernd\Documents\univ\2024-02\Análisis_Diseño_Algoritmos\proyectos\sistemaControlAsistencia\controlAcceso\obj\Debug\controlAcceso.csproj.AssemblyReference.cache
 C:\Users\fernd\Documents\univ\2024-02\Análisis_Diseño_Algoritmos\proyectos\sistemaControlAsistencia\controlAcceso\obj\Debug\controlAcceso.Properties.Resources.resources
 C:\Users\fernd\Documents\univ\2024-02\Análisis_Diseño_Algoritmos\proyectos\sistemaControlAsistencia\controlAcceso\obj\Debug\controlAcceso.csproj.GenerateResource.cache
@@ -16,3 +15,5 @@ C:\Users\fernd\Documents\univ\2024-02\Análisis_Diseño_Algoritmos\proyectos\sis
 C:\Users\fernd\Documents\univ\2024-02\Análisis_Diseño_Algoritmos\proyectos\sistemaControlAsistencia\controlAcceso\bin\Debug\capaDatos.dll.config
 C:\Users\fernd\Documents\univ\2024-02\Análisis_Diseño_Algoritmos\proyectos\sistemaControlAsistencia\controlAcceso\obj\Debug\controlAcceso.frmPersonal.resources
 C:\Users\fernd\Documents\univ\2024-02\Análisis_Diseño_Algoritmos\proyectos\sistemaControlAsistencia\controlAcceso\obj\Debug\controlAcceso.frmControl.resources
+C:\Users\fernd\Documents\univ\2024-02\Análisis_Diseño_Algoritmos\proyectos\sistemaControlAsistencia\controlAcceso\obj\Debug\controlAcceso.frmConsultaIndividual.resources
+C:\Users\fernd\Documents\univ\2024-02\Análisis_Diseño_Algoritmos\proyectos\sistemaControlAsistencia\controlAcceso\obj\Debug\controlAcceso.frmConsultaFecha.resources

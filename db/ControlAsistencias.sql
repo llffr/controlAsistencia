@@ -3,6 +3,8 @@ GO
 USE SISTEMACONTROLACCESO
 GO
 
+set dateformat dmy
+
 CREATE TABLE CARGO(
     IDCARGO INT IDENTITY PRIMARY KEY,
     NOMCARGO VARCHAR(100))
@@ -120,10 +122,8 @@ SET  @MES=(SELECT DATEPART(MM,GETDATE()))
 SET  @ANHO=(SELECT DATEPART(YY,GETDATE()))
 SET @CANT=(SELECT COUNT(*) FROM CONTROLASISTENCIA WHERE DNI=@DNI and DATEPART(DD,H_ING1)=@DIA 
 AND DATEPART(MM,H_ING1)=@MES AND DATEPART(YY,H_ING1)=@ANHO)
-
 SET @COD=(SELECT IDCONTROL FROM CONTROLASISTENCIA WHERE DNI=@DNI and DATEPART(DD,H_ING1)=@DIA 
 AND DATEPART(MM,H_ING1)=@MES AND DATEPART(YY,H_ING1)=@ANHO)
-
 IF @CANT=0
 	BEGIN
 		INSERT INTO CONTROLASISTENCIA (DNI,H_ING1) VALUES(@DNI,GETDATE())
@@ -149,29 +149,56 @@ IF @CANT=0
 	END
 END
 
-ALTER PROC pa_filtrarDatosPersonal
+alter PROC pa_filtrarDatosPersonal
 @dni varchar(10)
 AS
 BEGIN
-    -- Verificar si el DNI existe
-    IF (SELECT COUNT(*) FROM PERSONA WHERE DNI = @dni) = 0
-    BEGIN
-        PRINT 'El personal con el DNI proporcionado no está registrado.'
-    END
-    ELSE
-    BEGIN
-        -- Retorna más información sobre la persona, incluyendo cargo y estado
-        SELECT p.NOMBRE, p.APELLIDOS, p.TELF, c.NOMCARGO
-        FROM PERSONA p
-        INNER JOIN CARGO c ON p.IDCARGO = c.IDCARGO
-        WHERE p.DNI = @dni
-    END
+    -- -- Verificar si el DNI existe
+    -- IF (SELECT COUNT(*) FROM PERSONA WHERE DNI = @dni) = 0
+    -- BEGIN
+    --     PRINT 'El personal con el DNI proporcionado no está registrado.'
+    -- END
+    -- ELSE
+    -- BEGIN
+    --     -- Retorna más información sobre la persona, incluyendo cargo y estado
+    --     SELECT p.NOMBRE, p.APELLIDOS, p.TELF, c.NOMCARGO
+    --     FROM PERSONA p
+    --     INNER JOIN CARGO c ON p.IDCARGO = c.IDCARGO
+    --     WHERE p.DNI = @dni
+    -- END
+select concat(NOMBRE,' ',APELLIDOS) as datos from PERSONA where DNI=@dni
 END
 
-exec pa_filtrarDatosPersonal '12344321'
+alter proc pa_consultaAsistenciaDNI
+	@dni varchar(20)
+	as begin
+	SELECT C.DNI,APELLIDOS,NOMBRE,CONVERT(VARCHAR(10), H_ING1,103)AS FECHA,
+	--H_ING1
+	CAST(DATEPART(HOUR, H_ING1)AS CHAR(2))+':'+CAST(DATEPART(MINUTE, H_ING1)AS CHAR(2))+':'+CAST(DATEPART(SECOND, H_ING1)AS CHAR(2))AS[HH:MM:SS],
+	--H_SAL1
+	CAST(DATEPART(HOUR, H_SAL1)AS CHAR(2))+':'+CAST(DATEPART(MINUTE, H_SAL1)AS CHAR(2))+':'+CAST(DATEPART(SECOND, H_SAL1)AS CHAR(2))AS[HH:MM:SS],
+	--H_ING2
+	CAST(DATEPART(HOUR, H_ING2)AS CHAR(2))+':'+CAST(DATEPART(MINUTE, H_ING2)AS CHAR(2))+':'+CAST(DATEPART(SECOND, H_ING2)AS CHAR(2))AS[HH:MM:SS],
+	--H_SAL2
+	CAST(DATEPART(HOUR, H_SAL2)AS CHAR(2))+':'+CAST(DATEPART(MINUTE, H_SAL2)AS CHAR(2))+':'+CAST(DATEPART(SECOND, H_SAL2)AS CHAR(2))AS[HH:MM:SS]
+	FROM CONTROLASISTENCIA C INNER JOIN PERSONA P
+	ON C.DNI=P.DNI where c.DNI=@dni
+end
+
+--
+alter PROCEDURE pa_consultasFecha
+@F1 DATE, @F2 DATE
+AS
+BEGIN
+    SELECT P.DNI, CONCAT(P.NOMBRE, ' ', P.APELLIDOS) AS EMPLEADO, 
+           CA.H_ING1, CA.H_SAL1, CA.H_ING2, CA.H_SAL2, CA.FECHAING, C.NOMCARGO
+    FROM CONTROLASISTENCIA CA
+    INNER JOIN PERSONA P ON CA.DNI = P.DNI
+    INNER JOIN CARGO C ON P.IDCARGO = C.IDCARGO
+    WHERE CA.FECHAING BETWEEN @F1 AND @F2
+    ORDER BY CA.FECHAING ASC
+END
+
+exec pa_consultasFecha '01/10/2024','15/10/2024'
 
 select * from dbo.CONTROLASISTENCIA
-select * from PERSONA
-select * from CARGO
-
-select top 10 * from CONTROLASISTENCIA
